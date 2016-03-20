@@ -6,4 +6,4 @@
       .col-md-12
         p Content
         p = @post.content
-    = render partial: 'comments/comment', locals: { post: @post, comments: @post.comments }
+    = render partial: 'comments/post_comment', locals: { post: @post, comments: @post.comments }

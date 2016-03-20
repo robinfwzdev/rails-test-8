@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require comments/_comment
+//= require comments/_post_comment
 //= require comments/_user_profile_comment
