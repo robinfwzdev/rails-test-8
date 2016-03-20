@@ -1,0 +1,9 @@
+#posts-show-container
+  .container
+    .row
+      .col-md-12
+        h1 = @post.title
+      .col-md-12
+        p Content
+        p = @post.content
+    = render partial: 'comments/comment', locals: { post: @post, comments: @post.comments }
