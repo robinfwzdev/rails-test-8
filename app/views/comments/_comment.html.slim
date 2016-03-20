@@ -1,0 +1,29 @@
+.comments-comment-container
+  h3 Comments
+  .comments
+    - comments.each do |comment|
+      p 
+        span
+          = comment.user.name
+      p = comment.message
+  = form_tag post_comment_post_comments_url(post.id), class: 'comment_form' do
+    = text_area_tag 'message'
+    br
+    = button_tag('Post', type: 'button', class: "btn")
+    = hidden_field_tag 'post_id', post.id, id: "post_id"
+
+javascript:
+  $(function() {
+    $('.btn').click(function(event){
+      var post_id = $('#post_id').val();
+      var message = $('#message').val();
+
+      $.ajax({
+        type: "GET",
+        dataType: 'script',
+        url: "/posts/"+ post_id +"/comments/post_comment?message="+message,
+        success: function(data) {
+        }
+      })
+    })
+  });    
