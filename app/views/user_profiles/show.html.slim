@@ -1,0 +1,9 @@
+#users-show-container.container
+  .row
+    .col-md-12
+      = image_tag @user_profile.avatar.url(:thumb), class: 'img-responsive'
+    .col-md-2
+      | Name:
+    .col-md-10
+      = @user_profile.name
+  = render partial: 'comments/user_profile_comment', locals: { user_profile: @user_profile, comments: @user_profile.comments }    
