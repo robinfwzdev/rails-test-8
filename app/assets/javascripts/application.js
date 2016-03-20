@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require_tree .
 //= require comments/_comment
+//= require comments/_user_profile_comment
